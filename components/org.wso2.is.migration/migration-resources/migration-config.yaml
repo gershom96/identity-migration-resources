@@ -412,6 +412,8 @@ versions:
      # parameters:
        # Absolute path for the dry report. This is required in the dry run mode.
        # reportPath:
+       # Admin role of the current version. This is required only if changing the name of admin role in migrate Version.
+       # currentAdminRoleName:
    - name: "ConfigurationManagementSchemaMigrator"
      order: 5
      parameters:
@@ -471,13 +473,15 @@ versions:
      parameters:
        location: "step6"
        schema: "um"
+   - name: "SCIMGroupRoleMigrator"
+     order: 18
  -
    version: "6.0.0"
    migratorConfigs:
    -
      name: "ApplicationAccessURLMigrator"
      order: 1
-     parameters:
+     # parameters:
        # Absolute path for the dry report. This is required in the dry run mode.
        # reportPath:
 
@@ -558,8 +562,15 @@ versions:
        # Absolute path for the dry report. This is required in the dry run mode.
        # reportPath:
 
-   - name: "SystemAppRedirectURLMigrator"
+   - name: "SystemAppMigrator"
      order: 15
      parameters:
         consoleRedirectUrl: "regexp=(https://localhost:9443/console|https://localhost:9443/t/(.*)/console)"
         myaccountRedirectUrl: "regexp=(https://localhost:9443/myaccount|https://localhost:9443/t/(.*)/myaccount)"
+        accessTokenBindingType: "cookie"
+
+   - name: "AppInboundAuthMigrator"
+     order: 16
+
+   - name: "OIDCScopeDataMigrator"
+     order: 17
