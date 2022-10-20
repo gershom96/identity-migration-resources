@@ -577,7 +577,7 @@ versions:
 -
    version: "6.1.0"
    migratorConfigs:
-   - name: "SchemaMigrator"
+   - name: "AudienceMigrator"
      order: 1
      parameters:
        location: "step1"
