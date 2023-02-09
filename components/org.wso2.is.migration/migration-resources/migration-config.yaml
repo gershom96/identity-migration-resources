@@ -8,6 +8,7 @@ migrateVersion: "6.x.x"
 continueOnError: "false"
 batchUpdate: "true"
 ignoreForInactiveTenants: "true"
+isSeparateRegistryDB: "false"
 
 migrateTenantRange: "false"
 migrationStartingTenantID: "0"
@@ -566,7 +567,9 @@ versions:
      order: 15
      parameters:
         consoleRedirectUrl: "regexp=(https://localhost:9443/console|https://localhost:9443/t/(.*)/console)"
+        consoleAccessUrl: "https://localhost:9443/console"
         myaccountRedirectUrl: "regexp=(https://localhost:9443/myaccount|https://localhost:9443/t/(.*)/myaccount)"
+        myaccountAccessUrl: "https://localhost:9443/myaccount"
         accessTokenBindingType: "cookie"
 
    - name: "AppInboundAuthMigrator"
